@@ -4,7 +4,7 @@ export default function Card({type,days,pct,direction,avg}:
     {type: 'period' | 'direction' | 'change'|'entry',
      days?: number,
      pct?: number,
-    direction?: 'up' | 'down' | 'flat',
+    direction?: string,
     avg?: number}) {
 
       const directionColor =

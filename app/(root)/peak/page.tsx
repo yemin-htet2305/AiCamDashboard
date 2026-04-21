@@ -85,11 +85,13 @@ export default function Page() {
                     color: '#ffbf00'
                   }}
                 />
-                <Bar dataKey="entries" radius={[4, 4, 0, 0]}>
-                  {peakData?.peak.map((_, i) => (
-                    <Cell key={i} fill="rgba(255, 191, 0, 0.7)" />
-                  ))}
-                </Bar>
+                {peakData?.peak && (
+                  <Bar dataKey="entries" radius={[4, 4, 0, 0]}>
+                    {peakData.peak.map((_, i) => (
+                      <Cell key={i} fill="rgba(255, 191, 0, 0.7)" />
+                    ))}
+                  </Bar>
+                )}
               </BarChart>
             </ResponsiveContainer>
         </div>

@@ -41,17 +41,17 @@ export default function Page() {
         <div className='w-[full] h-auto m-5 p-10 bg-green-600/20 rounded-lg flex items-center justify-around'>
           <div className='flex flex-col items-center justify-center space-y-2'>
             <p className='font-light text-green-600 text-md'>DAILY AVERAGE</p>
-            <h1 className='ml-2'><span className='text-5xl font-bold text-green-600'>{data?.daily_avg.toFixed(1) || '0.0'}</span> /day</h1>
+            <h1 className='ml-2'><span className='text-5xl font-bold text-green-600'>{data?.daily_avg? data?.daily_avg.toFixed(1) : '0.0'}</span> /day</h1>
             <p className='text-gray-600 text-md'>All-time average</p>
           </div>
           <div className='flex flex-col items-center justify-center space-y-2'>
              <div className='flex flex-col items-end justify-center space-y-2'>
                 <p className='font-light text-gray-600 text-sm'>PER HOUR (EST.)</p>
-                <h1 className='ml-2 font-bold text-2xl'>{data?.daily_avg ? (data.daily_avg / 12).toFixed(1) : '0.0'}</h1>
+                <h1 className='ml-2 font-bold text-2xl'>{data?.daily_avg ? (data?.daily_avg ? data.daily_avg / 12 : 0).toFixed(1) : '0.0'}</h1>
              </div>
              <div className='flex flex-col items-end justify-center space-y-2'>
                 <p className='font-light text-gray-600 text-sm'>PER WEEK (EST.)</p>
-                <h1 className='ml-2 font-bold text-2xl'>{data?.daily_avg ? (data.daily_avg * 7).toFixed(1) : '0.0'}</h1>
+                <h1 className='ml-2 font-bold text-2xl'>{data?.daily_avg ? (data?.daily_avg ? data.daily_avg * 7 : 0).toFixed(1) : '0.0'}</h1>
              </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function Page() {
               <InsightCard insights={[
                           {
                             color: '#22c55e',
-                            text: <>Current daily average is <strong style={{ color: '#f0ede8' }}>{data?.daily_avg.toFixed(1) || '0.0'}</strong> entries/day.</>
+                            text: <>Current daily average is <strong style={{ color: '#f0ede8' }}>{data?.daily_avg? data?.daily_avg.toFixed(1) : '0.0'}</strong> entries/day.</>
                           },
                           {
                             color: '#818cf8',

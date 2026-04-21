@@ -30,7 +30,7 @@ export default function Page() {
       });
   }, [days]); // ← runs on first load, and every time days changes
 
-  let avgEntries = trendData?.data.reduce((sum, entry) => sum + entry.entries, 0) / (trendData?.data.length || 1);
+  let avgEntries = trendData?.data ? trendData.data.reduce((sum, entry) => sum + entry.entries, 0) / (trendData.data.length || 1) : 0;
   return (
     <>
       <main className="flex-1 relative bg-black">

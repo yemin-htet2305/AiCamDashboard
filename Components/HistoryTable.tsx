@@ -78,7 +78,7 @@ export default function HistoryTable({
           <span className="text-sm font-medium text-gray-400">Results</span>
           {!loading && (
             <span className="bg-[#4bcc17]/10 border border-[#4bcc17]/25 text-[#4bcc17] text-[11px] font-medium px-2.5 py-0.5 rounded-full">
-              {data.length} {data.length === 1 ? 'record' : 'records'}
+              {data?.length? data.length : 0}     {data?.length === 1 ? 'record' : 'records'}
             </span>
           )}
         </div>
@@ -111,37 +111,37 @@ export default function HistoryTable({
           </thead>
 
           <tbody>
-            {loading ? (
-              Array.from({ length: 5 }).map((_, i) => <SkeletonRow key={i} />)
-            ) : data.length === 0 ? (
-              <EmptyState />
-            ) : (
-              data.map((row, i) => (
-                <tr
-                  key={row.id}
-                  className={[
-                    'border-b border-[#161616] transition-colors duration-100 hover:bg-white/[0.02]',
-                    i === data.length - 1 ? 'border-b-0' : '',
-                  ].join(' ')}
-                >
-                  <td className="px-4 py-3 font-mono text-[12px] text-gray-600">
-                    #{String(row.id).padStart(3, '0')}
-                  </td>
-                  <td className="px-4 py-3">
-                    <span className="font-mono text-[12px] text-gray-400 bg-[#1a1a1a] border border-[#2a2a2a] rounded-md px-2 py-0.5">
-                      {row.date}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3">
-                    <EntriesBadge count={row.entries} />
-                  </td>
-                  <td className="px-4 py-3 font-mono text-[12px] text-gray-600">
-                    {row.savedAt}
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
+  {loading ? (
+    Array.from({ length: 5 }).map((_, i) => <SkeletonRow key={i} />)
+  ) : !data?.length ? (
+    <EmptyState />
+  ) : (
+    data.map((row, i) => (
+      <tr
+        key={row.id}
+        className={[
+          'border-b border-[#161616] transition-colors duration-100 hover:bg-white/[0.02]',
+          i === data.length - 1 ? 'border-b-0' : '',
+        ].join(' ')}
+      >
+        <td className="px-4 py-3 font-mono text-[12px] text-gray-600">
+          #{String(row.id).padStart(3, '0')}
+        </td>
+        <td className="px-4 py-3">
+          <span className="font-mono text-[12px] text-gray-400 bg-[#1a1a1a] border border-[#2a2a2a] rounded-md px-2 py-0.5">
+            {row.date}
+          </span>
+        </td>
+        <td className="px-4 py-3">
+          <EntriesBadge count={row.entries} />
+        </td>
+        <td className="px-4 py-3 font-mono text-[12px] text-gray-600">
+          {row.savedAt}
+        </td>
+      </tr>
+    ))
+  )}
+</tbody>
         </table>
       </div>
     </div>
