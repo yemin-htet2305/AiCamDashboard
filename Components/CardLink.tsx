@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export default function CardLink({ icon, title, children, href,color }: 
-    { icon: string, title: string, children: React.ReactNode, href: string,color: string }) {
+    { icon: React.ReactNode, title: string, children: React.ReactNode, href: string,color: string }) {
   return (
     <Link
       href={href}
