@@ -19,7 +19,7 @@ export default async function Home() {
         <h1 className="text-5xl font-bold text-gray-300">Entry Data</h1>
         <p className="text-gray-400 font-light">Track, analyze, and act on every entry event — from daily patterns to long-term trends, all in one place.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5 p-3">
             <CardLink icon={<HiMiniSquares2X2 size={40} color="#ff4d1c" /> } title="Summary" href="/summary" color="#ff4d1c">
             High-level overview of all lab entries.
           </CardLink>

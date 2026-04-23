@@ -1,6 +1,6 @@
 import fetchHandler from "./fetchHandler";  
 
-const API_BASE_URL = "http://127.0.0.1:5001/api";
+const API_BASE_URL = "http://localhost:5001/api";
 
 interface HistoryParams {
     date?: string;
