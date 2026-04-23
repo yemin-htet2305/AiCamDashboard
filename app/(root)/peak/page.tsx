@@ -8,7 +8,7 @@ import { BarChart, Bar, CartesianGrid, YAxis, XAxis, ResponsiveContainer, Toolti
 
 interface PeakData {
   top_n: number;
-  peak : { id: number; date: string; entries: number ,savedAt: string}[];
+  peak : { id: string; date: string; entries: number ,savedAt: string}[];
 }
 
 export default function Page() {

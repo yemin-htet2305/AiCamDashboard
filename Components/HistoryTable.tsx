@@ -1,7 +1,7 @@
 'use client'
 
 export interface HistoryRow {
-  id: number;
+  id: string;
   date: string;
   entries: number;
   savedAt: string;
@@ -118,14 +118,14 @@ export default function HistoryTable({
   ) : (
     data.map((row, i) => (
       <tr
-        key={row.id}
+        key={i}
         className={[
           'border-b border-[#161616] transition-colors duration-100 hover:bg-white/[0.02]',
           i === data.length - 1 ? 'border-b-0' : '',
         ].join(' ')}
       >
         <td className="px-4 py-3 font-mono text-[12px] text-gray-600">
-          #{String(row.id).padStart(3, '0')}
+          #{String(row.id)}
         </td>
         <td className="px-4 py-3">
           <span className="font-mono text-[12px] text-gray-400 bg-[#1a1a1a] border border-[#2a2a2a] rounded-md px-2 py-0.5">

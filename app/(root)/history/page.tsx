@@ -21,11 +21,11 @@ export default function Page() {
   
 
   const seedData = [
-    { id: 1, date: '2024-06-01', entries: 5, savedAt: '2024-06-01 12:00' },
-    { id: 2, date: '2024-06-02', entries: 15, savedAt: '2024-06-02 12:00' },
-    { id: 3, date: '2024-06-03', entries: 8, savedAt: '2024-06-03 12:00' },
-    { id: 4, date: '2024-06-04', entries: 20, savedAt: '2024-06-04 12:00' },
-    { id: 5, date: '2024-06-05', entries: 3, savedAt: '2024-06-05 12:00' },
+    { id: '1', date: '2024-06-01', entries: 5, savedAt: '2024-06-01 12:00' },
+    { id: '2', date: '2024-06-02', entries: 15, savedAt: '2024-06-02 12:00' },
+    { id: '3', date: '2024-06-03', entries: 8, savedAt: '2024-06-03 12:00' },
+    { id: '4', date: '2024-06-04', entries: 20, savedAt: '2024-06-04 12:00' },
+    { id: '5', date: '2024-06-05', entries: 3, savedAt: '2024-06-05 12:00' },
   ]
   const [data, setData] = useState<HistoryRow[]>(seedData)
 
