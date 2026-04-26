@@ -4,7 +4,7 @@ The web UI for AiCam. A Next.js app that reads from the Flask API and renders th
 
 **Author:** Ye Min Htet
 **Stack:** Next.js 16, React 19, TypeScript, Tailwind CSS 4, Recharts, react-data-table-component, react-icons
-**Runs on:** `192.168.1.126:3000`, managed by pm2
+**Runs on:** `<raspberrypi.address>:3000`, managed by pm2
 
 For the big picture, see the [root README](../README.md). For the API it consumes, see [`AiCamApi/README.md`](../AiCamApi/README.md) and [`API_REFERENCE.md`](../API_REFERENCE.md).
 
@@ -49,7 +49,7 @@ If you ever:
 ...you'll need to change this to the API server's real address:
 
 ```typescript
-const API_BASE_URL = "http://192.168.1.126:5001/api";
+const API_BASE_URL = "http://<raspberrypi_api_server.address>:5001/api";
 ```
 
 **Important gotcha:** these API calls are made from the **client side** (look for `'use client'` at the top of the page files). That means the URL is resolved by the user's browser, not by the Next.js server. `localhost:5001` in the browser means *their* machine's port 5001 — not the server's. So in practice, for the dashboard to work for anyone other than someone sitting at the `192.168.1.126` machine, this value **needs to be the real IP**, not `localhost`.
@@ -123,7 +123,7 @@ npm run start    # serves the built app on port 3000
 
 ```bash
 npm run build
-pm2 start npm --name aicam-dashboard -- start
+pm2 start npm --name AiCamDashboard -- start
 pm2 save
 pm2 startup      # follow the command it prints so pm2 comes back on reboot
 ```
@@ -133,10 +133,10 @@ That `-- start` syntax tells pm2 to run `npm start`. The `--` separates pm2's fl
 Useful commands:
 
 ```bash
-pm2 logs aicam-dashboard        # tail logs
-pm2 restart aicam-dashboard     # after rebuilding
-pm2 stop aicam-dashboard
-pm2 delete aicam-dashboard
+pm2 logs AiCamDashboard       # tail logs
+pm2 restart AiCamDashboard    # after rebuilding
+pm2 stop AiCamDashboard
+pm2 delete AiCamDashboard
 pm2 monit
 ```
 
