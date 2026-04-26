@@ -333,13 +333,13 @@ npm run build
 The build probably failed or the port is already in use. Check:
 
 ```bash
-pm2 logs aicam-dashboard --err
+pm2 logs AiCamDashboard --err
 lsof -i :3000
 ```
 
 **Browser shows "Connection refused" for every page**
 
-pm2 isn't actually running it. `pm2 list` should show `aicam-dashboard` as `online`. If it says `errored`, look at the logs.
+pm2 isn't actually running it. `pm2 list` should show `AiCamDashboard` as `online`. If it says `errored`, look at the logs.
 
 ---
 
