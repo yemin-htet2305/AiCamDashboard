@@ -93,7 +93,7 @@ This pulls everything listed in `package.json`:
 Before starting the dashboard, make sure the Flask API is actually running:
 
 ```bash
-curl http://192.168.1.126:5001/api/stats/summary
+curl http://<raspberrypi_api_server.address>:5001/api/stats/summary
 ```
 
 If you get a JSON response (even one that says `"No data found"`), the API is up. If you get a connection-refused error, go fix the API first.
