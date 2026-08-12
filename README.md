@@ -1,5 +1,7 @@
 # AiCamDashboard
 
+> 📄 **Note:** Additional `.md` documentation for this project can be found in Microsoft Teams.
+
 The web UI for AiCam. A Next.js app that reads from the Flask API and renders the lab's entry data as cards, tables, and charts.
 
 **Author:** Ye Min Htet
